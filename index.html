@@ -4,13 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portofolio Pribadi</title>
-
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
-
-/* ===========================
-   BACKGROUND BARU (BIRU–HIJAU CEPAT)
-   =========================== */
+/* [CSS SAMA seperti sebelumnya — tidak perlu diubah khusus src gambar!] */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height:100vh;
@@ -18,322 +13,62 @@ body {
   flex-direction:column;
   justify-content:flex-start;
   align-items:center;
-
   background: linear-gradient(120deg, #00d0ff, #00ff7a);
   background-size: 300% 300%;
   animation: bgMove 4s ease infinite;
-
   color:#fff;
 }
-
-@keyframes bgMove {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.navbar {
-  display:flex;
-  justify-content:center;
-  background-color:#333;
-  width:100%;
-  padding:10px 0;
-  position:fixed;
-  top:0;
-  left:0;
-  z-index:1000;
-}
-
-.navbar a {
-  color:white;
-  padding:12px 20px;
-  text-decoration:none;
-  font-size:16px;
-  border-radius:20px;
-  transition: background-color 0.3s, transform 0.3s;
-  margin:0 10px;
-}
-.navbar a:hover { background-color:#0056b3; transform:scale(1.1); }
-
-.container {
-  width:85%;
-  max-width:1300px;
-  margin-top:90px;
-  padding:50px;
-  text-align:center;
-  background:#ffffff;
-  border-radius:16px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
-  color:#000;
-}
-
+@keyframes bgMove { 0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.navbar { display:flex; justify-content:center; background-color:#333; width:100%; padding:10px 0; position:fixed; top:0; left:0; z-index:1000; }
+.navbar a { color:white; padding:12px 20px; text-decoration:none; font-size:16px; border-radius:20px; transition: background-color 0.3s, transform 0.3s; margin:0 10px;}
+.navbar a:hover { background-color:#0056b3; transform:scale(1.1);}
+.container { width:85%; max-width:1300px; margin-top:90px; padding:50px; text-align:center; background:#ffffff; border-radius:16px; box-shadow:0 4px 10px rgba(0,0,0,0.1); color:#000; }
 h1 { font-size:48px; margin-bottom:20px; }
-
-.section {
-  margin-top:40px;
-  padding:50px;
-  border-radius:12px;
-  background:#ffffff;
-  box-shadow:0 4px 10px rgba(0,0,0,0.05);
-}
-
-/* ===========================
-   BINGKAI FOTO (ANIMASI PELAN)
-   =========================== */
-.profil-img-wrapper {
-  position: relative;
-  width:250px;
-  height:250px;
-  border-radius:50%;
-  margin:0 auto 5px auto; /* NAIKIN DEKET KE JUDUL */
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  transition: transform 0.35s ease;
-}
-
-.profil-img-wrapper:hover {
-  transform: scale(1.06);   /* INTERAKTIF */
-}
-
-.profil-img-wrapper:hover::before {
-  box-shadow: 0 0 25px rgba(0, 255, 140, 0.55); /* GLOW HALUS */
-}
-
-
-.profil-img-wrapper::before {
-  content:"";
-  position:absolute;
-  inset:-8px;
-  border-radius:50%;
-  background:conic-gradient(#0095ff, #00ffe0, #00ff7a, #0095ff);
-  background-size:300% 300%;
-  z-index:1;
-
-  animation: spinBorder 10s linear infinite; /* PELAN & SMOOTH */
-}
-
-@keyframes spinBorder {
-  from { transform:rotate(0deg); }
-  to { transform:rotate(360deg); }
-}
-
-.profil-img {
-  width:230px;
-  height:230px;
-  border-radius:50%;
-  object-fit:cover;
-  position:relative;
-  z-index:2;
-}
-
-/* ===========================
-   KETERAMPILAN
-   =========================== */
-.skills-grid {
-  width:100%;
-  max-width:1000px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:35px;
-  justify-items:center;
-}
-
-.skill-item {
-  width:300px;
-  height:300px;
-  padding:20px;
-  background:#f7f7f7;
-  border-radius:14px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.1);
-  text-align:center;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  color:#000;
-  font-size:20px;
-  font-weight:600;
-  transition:transform 0.3s;
-}
+.section { margin-top:40px; padding:50px; border-radius:12px; background:#ffffff; box-shadow:0 4px 10px rgba(0,0,0,0.05); }
+.profil-img-wrapper { position: relative; width:250px; height:250px; border-radius:50%; margin:0 auto 5px auto; display:flex; justify-content:center; align-items:center; transition: transform 0.35s ease; }
+.profil-img-wrapper:hover { transform: scale(1.06);}
+.profil-img-wrapper:hover::before { box-shadow: 0 0 25px rgba(0, 255, 140, 0.55);}
+.profil-img-wrapper::before { content:""; position:absolute; inset:-8px; border-radius:50%; background:conic-gradient(#0095ff, #00ffe0, #00ff7a, #0095ff); background-size:300% 300%; z-index:1; animation: spinBorder 10s linear infinite; }
+@keyframes spinBorder { from { transform:rotate(0deg);} to {transform:rotate(360deg);} }
+.profil-img { width:230px; height:230px; border-radius:50%; object-fit:cover; position:relative; z-index:2; }
+.skills-grid { width:100%; max-width:1000px; margin:0 auto; display:grid; grid-template-columns:repeat(3, 1fr); gap:35px; justify-items:center;}
+.skill-item { width:300px; height:300px; padding:20px; background:#f7f7f7; border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center; color:#000; font-size:20px; font-weight:600; transition:transform 0.3s;}
 .skill-item:hover { transform:scale(1.08); }
-
-.skill-item img {
-  width:110px;
-  height:110px;
-  margin-bottom:20px;
-  object-fit:contain;
-}
-
-/* ===========================
-   KONTEN LAIN
-   =========================== */
+.skill-item img { width:110px; height:110px; margin-bottom:20px; object-fit:contain; }
 .content { display:none; }
 .content.active { display:block; }
-
-input, textarea {
-  width:100%; padding:10px; margin-bottom:10px;
-  border-radius:5px; border:1px solid #ccc;
-}
-button {
-  padding:12px 25px; border:none; border-radius:5px;
-  background-color:#007bff; color:#fff; font-size:16px;
-  cursor:pointer;
-}
-
-footer {
-  margin-top:30px; padding:15px; text-align:center; font-size:14px;
-  color:#fff;
-}
-
-/* ===========================
-   CONTOH KERJA 7 FOTO (TIDAK DIUBAH)
-   =========================== */
-.project-main {
-  width:100%;
-  display:flex;
-  justify-content:center;
-  margin-bottom:50px;
-}
-.project-main img {
-  width:1200px;
-  max-width:95%;
-  border-radius:14px;
-  cursor:pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.project-main img:hover {
-  transform:scale(1.03);
-  box-shadow:0 8px 25px rgba(0,0,0,0.35);
-}
-
-.project-grid {
-  display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  gap:40px;
-  justify-items:center;
-  margin-top:25px;
-}
-
-.project-grid img {
-  width:600px;
-  max-width:95%;
-  border-radius:12px;
-  cursor:pointer;
-  transition:transform 0.3s, box-shadow 0.3s;
-}
-.project-grid img:hover {
-  transform:scale(1.06);
-  box-shadow:0 8px 25px rgba(0,0,0,0.35);
-}
-
-/* Lightbox */
-#lightbox {
-  display:none; position:fixed; top:0; left:0;
-  width:100%; height:100%; background:rgba(0,0,0,0.85);
-  justify-content:center; align-items:center; z-index:2000;
-}
-#lightbox img {
-  max-width:90%;
-  max-height:90%;
-  border-radius:12px;
-}
-
-/* ============================
-   RESPONSIVE UNTUK HP (< 600px)
-   ============================ */
+input, textarea { width:100%; padding:10px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc; }
+button { padding:12px 25px; border:none; border-radius:5px; background-color:#007bff; color:#fff; font-size:16px; cursor:pointer;}
+footer { margin-top:30px; padding:15px; text-align:center; font-size:14px; color:#fff;}
+.project-main { width:100%; display:flex; justify-content:center; margin-bottom:50px;}
+.project-main img { width:1200px; max-width:95%; border-radius:14px; cursor:pointer; transition: transform 0.3s, box-shadow 0.3s;}
+.project-main img:hover { transform:scale(1.03); box-shadow:0 8px 25px rgba(0,0,0,0.35);}
+.project-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:40px; justify-items:center; margin-top:25px;}
+.project-grid img { width:600px; max-width:95%; border-radius:12px; cursor:pointer; transition:transform 0.3s, box-shadow 0.3s;}
+.project-grid img:hover { transform:scale(1.06); box-shadow:0 8px 25px rgba(0,0,0,0.35);}
+#lightbox { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:2000;}
+#lightbox img { max-width:90%; max-height:90%; border-radius:12px; }
 @media (max-width: 600px) {
-
-  .container {
-    width: 92%;
-    padding: 25px;
-  }
-
-  h1 {
-    font-size: 32px;
-  }
-
-  .section {
-    padding: 30px 20px;
-  }
-
-  /* PROFIL */
-  .profil-img-wrapper {
-    width: 180px;
-    height: 180px;
-  }
-  .profil-img {
-    width: 160px;
-    height: 160px;
-  }
-
-  /* TEKS DESKRIPSI PROFIL */
-  #profil-content p {
-    font-size: 16px !important;
-  }
-
-  /* GRID KETERAMPILAN (DARI 3 KOLOM → 1 KOLOM) */
-  .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .skill-item {
-    width: 100%;
-    height: auto;
-    padding: 25px;
-  }
-
-  .skill-item img {
-    width: 90px;
-    height: 90px;
-  }
-
-  /* CONTOH KERJA */
-  .project-main img {
-    width: 100% !important;
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr; /* 1 baris 1 foto */
-    gap: 25px;
-  }
-
-  .project-grid img {
-    width: 100% !important;
-  }
-
-  /* RIWAYAT KERJA */
-  #riwayat-kerja-content ul {
-    font-size: 16px;
-  }
-
-  /* KONTEN KONTAK */
-  #kontak-content p {
-    font-size: 17px;
-  }
-
-  input, textarea {
-    font-size: 16px;
-  }
-
-  /* NAVBAR */
-  .navbar {
-    flex-wrap: wrap;
-    padding: 10px 5px;
-  }
-
-  .navbar a {
-    margin: 3px 5px;
-    font-size: 14px;
-    padding: 10px 14px;
-  }
+  .container { width: 92%; padding: 25px;}
+  h1 {font-size:32px;}
+  .section {padding: 30px 20px;}
+  .profil-img-wrapper {width: 180px; height: 180px;}
+  .profil-img {width: 160px; height: 160px;}
+  #profil-content p {font-size: 16px !important;}
+  .skills-grid { grid-template-columns: 1fr; gap: 25px;}
+  .skill-item { width: 100%; height: auto; padding: 25px;}
+  .skill-item img { width: 90px; height: 90px;}
+  .project-main img { width: 100% !important;}
+  .project-grid { grid-template-columns: 1fr; gap: 25px;}
+  .project-grid img { width: 100% !important;}
+  #riwayat-kerja-content ul { font-size: 16px;}
+  #kontak-content p { font-size: 17px;}
+  input, textarea { font-size: 16px;}
+  .navbar { flex-wrap: wrap; padding: 10px 5px;}
+  .navbar a { margin: 3px 5px; font-size: 14px; padding: 10px 14px;}
 }
-
 </style>
 </head>
-
 <body>
 
 <div class="navbar">
@@ -346,137 +81,121 @@ footer {
 
 <div class="container">
 
-  <!-- ======================
-       PROFIL
-       ====================== -->
+  <!-- PROFIL -->
   <div class="content" id="profil-content">
     <h1>Portofolio Pribadi</h1>
-
     <div class="section" style="padding:70px 50px; min-height:600px;">
         <div class="profil-img-wrapper">
             <img src="images/faiz.jpg" class="profil-img" alt="Foto Faiz">
         </div>
-
         <p style="font-size:26px; font-weight:bold; margin-bottom:10px;">
-            <br>
-          Faiz Abdurrahman Sholih
+            <br>Faiz Abdurrahman Sholih
         </p>
-
-        <p style="font-size:18px; line-height:1.6; bottom: ;">
+        <p style="font-size:18px; line-height:1.6;">
             <br><br>
-          Nama saya adalah <b>Faiz Abdurrahman Sholih</b>, seorang desainer grafis dan editor video. 
-          Saya membuat poster, thumbnail YouTube, hingga edit cinematic, vlog, dan konten komersial. 
-          Saya juga menguasai software seperti CapCut, Alight Motion, Adobe, Affinity, dan DaVinci Resolve.
+            Nama saya adalah <b>Faiz Abdurrahman Sholih</b>, seorang desainer grafis dan editor video. 
+            Saya membuat poster, thumbnail YouTube, hingga edit cinematic, vlog, dan konten komersial. 
+            Saya juga menguasai software seperti CapCut, Alight Motion, Adobe, Affinity, dan DaVinci Resolve.
         </p>
     </div>
-</div>
+  </div>
 
-  <!-- ======================
-       KETERAMPILAN
-       ====================== -->
+  <!-- KETERAMPILAN -->
   <div class="content" id="keterampilan-content">
-      <h1>Keterampilan</h1>
+    <h1>Keterampilan</h1>
+    <div class="section">
+      <div class="skills-grid">
 
-      <div class="section">
-          <div class="skills-grid">
+        <div class="skill-item">
+          <img src="images/capcut.png" alt="CapCut">
+          <p>Editing menggunakan CapCut</p>
+        </div>
 
-              <div class="skill-item">
-                  <img src="images/capcut.png">
-                  <p>Editing menggunakan CapCut</p>
-              </div>
+        <div class="skill-item">
+          <img src="images/am.jpg" alt="Alight Motion">
+          <p>Motion design (Alight Motion)</p>
+        </div>
 
-              <div class="skill-item">
-                  <img src="images/am.jpg">
-                  <p>Motion design (Alight Motion)</p>
-              </div>
+        <div class="skill-item">
+          <img src="images/adobe.jpg" alt="Adobe">
+          <p>Adobe Photoshop, Premiere, After Effects</p>
+        </div>
 
-              <div class="skill-item">
-                  <img src="images/adobe.jpg">
-                  <p>Adobe Photoshop, Premiere, After Effects</p>
-              </div>
+        <div class="skill-item">
+          <img src="images/canva-icon-logo-symbol-free-png.webp" alt="Canva">
+          <p>Desain Grafis Canva</p>
+        </div>
 
-              <div class="skill-item">
-                  <img src="images/canva-icon-logo-symbol-free-png.webp">
-                  <p>Desain Grafis Canva</p>
-              </div>
+        <div class="skill-item">
+          <img src="images/affinity.png" alt="Affinity">
+          <p>Affinity Photo & Designer</p>
+        </div>
 
-              <div class="skill-item">
-                  <img src="images/affinity.png">
-                  <p>Affinity Photo & Designer</p>
-              </div>
+        <div class="skill-item">
+          <img src="images/davinci.webp" alt="DaVinci Resolve">
+          <p>Color grading DaVinci Resolve</p>
+        </div>
 
-              <div class="skill-item">
-                  <img src="images/davinci.webp">
-                  <p>Color grading DaVinci Resolve</p>
-              </div>
-
-          </div>
       </div>
+    </div>
   </div>
 
-  <!-- ======================
-       CONTOH KERJA
-       ====================== -->
+  <!-- CONTOH KERJA -->
   <div class="content" id="contoh-kerja-content">
-      <h1>Contoh Kerja</h1>
-      <h2>(Thumbnails)</h2>
-      <div class="section">
+    <h1>Contoh Kerja</h1>
+    <h2>(Thumbnails)</h2>
+    <div class="section">
 
-          <div class="project-main">
-              <img src="images/Projek 3 Thumbnail.jpg" id="main-project-img">
-          </div>
-
-          <div class="project-grid">
-              <img src="images/Nhelv Thumbnail.png">
-              <img src="images/Spectre Thumbnail.jpg">
-              <img src="images/The Golden Thumbnail.jpg">
-              <img src="images/Faded Thumbnail.jpg">
-              <img src="images/Dream Flower Thumbnail.jpg">
-              <img src="images/The Rupture Thumbnail.jpg">
-          </div>
-
+      <div class="project-main">
+        <img src="images/Projek-3-Thumbnail.jpg" id="main-project-img" alt="Projek 3">
       </div>
+
+      <div class="project-grid">
+        <img src="images/Nhelv-Thumbnail.png" alt="Nhelv Thumbnail">
+        <img src="images/Spectre-Thumbnail.jpg" alt="Spectre Thumbnail">
+        <img src="images/The-Golden-Thumbnail.jpg" alt="The Golden Thumbnail">
+        <img src="images/Faded-Thumbnail.jpg" alt="Faded Thumbnail">
+        <img src="images/Dream-Flower-Thumbnail.jpg" alt="Dream Flower Thumbnail">
+        <img src="images/The-Rupture-Thumbnail.jpg" alt="The Rupture Thumbnail">
+      </div>
+
+    </div>
   </div>
 
-  <!-- ======================
-       RIWAYAT KERJA
-       ====================== -->
+  <!-- RIWAYAT KERJA -->
   <div class="content" id="riwayat-kerja-content">
-      <h1>Riwayat Kerja</h1>
-      <div class="section">
-          <ul>
-              <li><b>Editor YouTube Freelance</b> (2021 - Sekarang)</li>
-              <li><b>Editor Iklan & Konten Sosmed</b> (2022 - 2024)</li>
-              <li><b>Desainer Grafis Freelance</b> (2020 - Sekarang)</li>
-          </ul>
-      </div>
+    <h1>Riwayat Kerja</h1>
+    <div class="section">
+      <ul>
+        <li><b>Editor YouTube Freelance</b> (2021 - Sekarang)</li>
+        <li><b>Editor Iklan & Konten Sosmed</b> (2022 - 2024)</li>
+        <li><b>Desainer Grafis Freelance</b> (2020 - Sekarang)</li>
+      </ul>
+    </div>
   </div>
 
-  <!-- ======================
-       KONTAK
-       ====================== -->
+  <!-- KONTAK -->
   <div class="content" id="kontak-content">
-      <h1>Kontak</h1>
-      <div class="section">
-          <p>Email: <strong>Faizasholih@gmail.com</strong></p>
-          <p>Telepon: <strong>08771389144</strong></p>
-          <p>Instagram: <strong><a href="https://www.instagram.com/faizslh/" target="_blank">@faizslh</a></strong></p>
-      </div>
-
-      <div class="section">
-          <h2>Kirim Pesan</h2>
-          <form id="contact-form">
-              <label>Nama:</label>
-              <input type="text">
-              <label>Email:</label>
-              <input type="email">
-              <label>No. Telepon:</label>
-              <input type="text">
-              <label>Pesan:</label>
-              <textarea rows="5"></textarea>
-              <button type="submit">Kirim</button>
-          </form>
-      </div>
+    <h1>Kontak</h1>
+    <div class="section">
+      <p>Email: <strong>Faizasholih@gmail.com</strong></p>
+      <p>Telepon: <strong>08771389144</strong></p>
+      <p>Instagram: <strong><a href="https://www.instagram.com/faizslh/" target="_blank">@faizslh</a></strong></p>
+    </div>
+    <div class="section">
+      <h2>Kirim Pesan</h2>
+      <form id="contact-form">
+        <label>Nama:</label>
+        <input type="text">
+        <label>Email:</label>
+        <input type="email">
+        <label>No. Telepon:</label>
+        <input type="text">
+        <label>Pesan:</label>
+        <textarea rows="5"></textarea>
+        <button type="submit">Kirim</button>
+      </form>
+    </div>
   </div>
 
 </div>
@@ -492,15 +211,12 @@ function showContent(id){
   document.querySelectorAll('.content').forEach(c=>c.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
-
 document.getElementById('profil-btn').onclick = ()=> showContent('profil-content');
 document.getElementById('keterampilan-btn').onclick = ()=> showContent('keterampilan-content');
 document.getElementById('contoh-kerja-btn').onclick = ()=> showContent('contoh-kerja-content');
 document.getElementById('riwayat-kerja-btn').onclick = ()=> showContent('riwayat-kerja-content');
 document.getElementById('kontak-btn').onclick = ()=> showContent('kontak-content');
-
 showContent('profil-content');
-
 document.querySelectorAll('.project-grid img, .project-main img').forEach(img=>{
   img.addEventListener('click', ()=>{
     const lb = document.getElementById('lightbox');
@@ -509,7 +225,6 @@ document.querySelectorAll('.project-grid img, .project-main img').forEach(img=>{
     lb.style.display = 'flex';
   });
 });
-
 document.addEventListener('keydown', (e)=>{
   if (e.key === 'Escape') document.getElementById('lightbox').style.display = 'none';
 });
